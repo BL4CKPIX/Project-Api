@@ -22,7 +22,7 @@ export default class Movie extends Component {
         const AllFilmes = Resposta.data.results.map((item) => {
             return {
                 ...item,
-                nome: item.original_title
+                image: `https://image.tmdb.org/t/p/w500${item.poster_path}`
             }
         })
         console.log(AllFilmes)
@@ -36,11 +36,14 @@ export default class Movie extends Component {
             <>
                 <ul>
                     {this.state.movies.map((item, index) => (
+                        <div>
                         <ul key={index}>
-                            <li>{item.nome}</li>
+                            <li>{item.original_title}</li>
                             <li>{item.overview}</li>
                             <li>{item.vote_average}</li>
                         </ul>
+                        <img src={item.image} />
+                        </div>
                     ))}
                 </ul>
             </>

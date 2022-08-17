@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Movies from './Services/Movies.js'
+import Header from './Component/Header.js'
 
 export default class App extends Component{
   
@@ -25,7 +25,7 @@ export default class App extends Component{
   render(){
     return(
       <div>
-        <Movies />
+        <Header />
       </div>
     )
   }
