@@ -8,7 +8,8 @@ console.log(FilmesApi)
 export default class Movie extends Component {
 
     state = {
-        movies: []
+        movies: [],
+        FilterMovies: []
     }
 
     componentDidMount() {
@@ -27,15 +28,30 @@ export default class Movie extends Component {
         })
         console.log(AllFilmes)
         this.setState({
-            movies: AllFilmes
+            movies: AllFilmes,
+            FilterMovies: AllFilmes
+        })
+    }
+
+    handleChange = (event) => {
+        const ListaFiltrada = this.state.movies.filter((item) =>{
+            if(item.original_title.toLowerCase().includes(event.target.value.toLowerCase())){
+                return true
+            }else{
+                return ""
+            }
+        })
+        this.setState({
+            FilterMovies:ListaFiltrada
         })
     }
 
     render() {
         return (
             <>
+            <input onChange={this.handleChange}/>
                 <ul>
-                    {this.state.movies.map((item, index) => (
+                    {this.state.FilterMovies.map((item, index) => (
                         <div>
                         <ul key={index}>
                             <li>{item.original_title}</li>
