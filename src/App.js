@@ -1,34 +1,30 @@
 import React, {Component} from 'react'
 import Header from './Component/Header.js'
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  body{
+    background-color:#FF7F50;
+  }
+
+`
 
 export default class App extends Component{
-  
-  // state={
-  //   nome: 'David'
-  // }
-
-  // componentDidMount(){
-  //   document.title = this.state.nome
-  // }
-  // componentDidUpdate(state){
-  //   if(state !== this.state.nome){
-  //     document.title = this.state.nome
-  //   }
-  // }
-  // mudar = () =>{
-  //   this.setState({
-  //     nome: this.state.nome == "leonardo" ? "david" : "leonardo",
-  //     corpo: document.body.style.backgroundColor = "red"
-  //   })
-  // }
 
   render(){
     return(
       <div>
+        <GlobalStyle />
         <Header />
       </div>
     )
   }
 }
+
 
 
