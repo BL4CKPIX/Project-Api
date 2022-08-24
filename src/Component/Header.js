@@ -10,23 +10,25 @@ const Container = styled.div`
     display:flex;
     justify-content:center;
     align-items: center;
-    border:solid;
+    font-family: 'Tourney', cursive;
+    
     
     ul{
         display:flex;
         justify-content: space-around;
-        width:100%;
-        border:solid;
+        align-items:center;
+        width:80vw;
+        list-style: none;
     }
 
     li{
-        font-size: 1.5vw;
-        width:20vw
+        font-size: 2vw;
     }
 `
 
 const Foto = styled.img`
-    width:20vw;
+    height:6.5vh;
+    width:18vw;
 `
 
 export default class Header extends Component {
